@@ -1,63 +1,78 @@
-/*
-
-7.ZnajdŸ poprzednik i nastêpnik najmniejszej wartoœci w tablicy (wartoœæ komórki o numerze o jeden wiêkszym i o jeden mniejszym, ni¿ indeks minimum tablicy).
-
-8.Przepisaæ do nowej tablicy te elementy, których wartoœæ jest >10. Nowa tablica ma mieæ rozmiar równy iloœci tych elementów.
-
-9.Utwórz now¹ tablicê 100 elementow¹. Wype³nij j¹ w taki sposób, aby
-B[i] = A[1] + A[2] + A[3] + … + A[i],
-gdzie B to nasza nowa, a A, stara tablica.
-
-10.Posortuj tablicê malej¹co.
-
-11.Wypisz na ekran elementy, które wystêpuj¹ w tablicy przynajmniej 3 razy.
-
-
-*/
 #include <iostream>
 #include <time.h>
 #include <cstdlib>
 using namespace std;
 int tab[100];
-int min = 0;
-int maks = 0;
+int min = tab[0];
+int maks = tab[0];
+int ile = 0;
+int wliczanie = 0;
+int a;
 int main()
 {
---------ZAD 1
+// ZAD 1
  srand(time(NULL));
  for(int i = 0; i < 100; i++){
     tab[i]=rand()%100+1;
     cout << tab[i] << ",";
  }
- /*WYSZUKIWANIE MIN I MAKS + INFO ILE RAZY TE LICZBY WYST¥PI£Y W TABLICY*/
- ---------ZAD 2
+//ZAD 2
  for(int i = 1; i < 100; i++){
-    maks=tab[i];
-    ile=1;
- }else if(tab[i] == maks){
- ile++;
- }
+if(tab[i] > maks){
+maks = tab[i];
+ile = 1;
+}else if(tab [i] == maks){
+    ile++;
+}}
  cout << "Najwieksza liczba to: " << maks <<endl;
  cout << "Ilosc wystapien najwiekszej liczby: " << ile << endl;
 
 
- }
- ---------ZAD 3
-    /*WYŒWIETLANIE LICZB NIEPARZYSTYCH*/
- if(tab[i] % 2 = 0; i++;){
-cout << "Do liczb nieparzystych nale¿¹ wartoœci: " << << endl;
- }
 
----------ZAD 4
-/*Wyœwietl na ekran liczby znajduj¹ce siê w komórkach o nieparzystych indeksach.*/
+ //ZAD 3
+cout << "Do liczb nieparzystych naleÅ¼Ä… wartoÅ›ci: " << endl;
+for(int i = 1; i < 100; i++){
+        if(tab [i] % 2 != 0){
+            cout << tab[i] << " ";
+        }
 
----------ZAD 5
-/*Program policzy ile liczb zawiera siê w przedziale <5, 15) , po czym wypisze te liczby na ekran.*/
 
----------ZAD 6
-/*6.ZnajdŸ element najbli¿szy wartoœci¹ wprowadzonej przez u¿ytkownika liczbie „a”.*/
-cout << "WprowadŸ dowolna liczba jako zmienna a i znajdziemy ci jak¹œ najbli¿sz¹ z tablicy: ";
+//ZAD 4
+for(int i = 1; i < 100; i+=2){
+  cout << tab[i] << " ";
+}
+
+//ZAD 5
+cout << "Liczby z przedzialu <5, 15) to: ";
+for(int i = 1; i < 100; i++){
+        if(tab [i] >= 5 && tab [i] < 15){
+                cout << tab[i] << " ";
+                wliczanie++;
+        }}
+        cout << "W przedziale znajduje sie: " << wliczanie <<" liczb" <<endl;
+//ZAD 6
+/*6.ZnajdÅº element najbliÅ¼szy wartoÅ›ciÄ… wprowadzonej przez uÅ¼ytkownika liczbie â€aâ€.*/
+cout << "WprowadÅº dowolna liczba jako zmienna a i znajdziemy ci jakÄ…Å› najbliÅ¼szÄ… z tablicy: ";
 cin>>a;
-if(tab[i])
+
+//ZAD 7
+/*7.ZnajdÅº poprzednik i nastÄ™pnik najmniejszej wartoÅ›ci w tablicy (wartoÅ›Ä‡ komÃ³rki o numerze o jeden wiÄ™kszym i o jeden mniejszym, niÅ¼ indeks minimum tablicy).
+*/
+
+//ZAD 8
+/*8.PrzepisaÄ‡ do nowej tablicy te elementy, ktÃ³rych wartoÅ›Ä‡ jest >10. Nowa tablica ma mieÄ‡ rozmiar rÃ³wny iloÅ›ci tych elementÃ³w.*/
+
+//ZAD 9
+/*9.UtwÃ³rz nowÄ… tablicÄ™ 100 elementowÄ…. WypeÅ‚nij jÄ… w taki sposÃ³b, aby
+B[i] = A[1] + A[2] + A[3] + â€¦ + A[i],
+gdzie B to nasza nowa, a A, stara tablica.*/
+
+//ZAD 10
+
+/*10.Posortuj tablicÄ™ malejÄ…co.*/
+
+//ZAD 11
+
+/*11.Wypisz na ekran elementy, ktÃ³re wystÄ™pujÄ… w tablicy przynajmniej 3 razy.*/
     return 0;
 }
